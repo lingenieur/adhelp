@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://xulschoolhello/skin/browserOverlay.css" ?>
+  
+<window
+    id="ADconfig-window"
+    orient="horizontal"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+<html:style>
+
+</html:style>
+
+<html:center>
+<html:a href="http://google.fr" target="_blank" onclick="window.open('http://google.fr');">
+<html:div>
+<html:iframe src="http://media-curse.cursecdn.com/attachments/63/997/keyart_cq_16_9-640x360.jpg" width="640px" height="360px" marginwidth="0" marginheight="0" align="middle" frameborder="0" scrolling="no" >
+</html:iframe>
+</html:div>
+</html:a>
+</html:center>
+
+</window>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://adhelp/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://adhelp/locale/browserOverlay.dtd">
+
+<overlay id="adhelp-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://adhelp/content/browserOverlay.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="adhelp-string-bundle"
+      src="chrome://adhelp/locale/browserOverlay.properties" />
+  </stringbundleset>
+
+  <menubar id="main-menubar">
+    <menu id="adhelp-pub-menu" label="&adhelp.pub.label;"
+      accesskey="T" insertafter="helpMenu">
+      <menupopup>
+        <menuitem id="adhelp-format1-menu-item"
+          label="&adhelp.format1.label;"
+          oncommand="adhelpChrome1.BrowserOverlay.Adshow_format1(event);" />		  
+      </menupopup>
+    </menu>
+  </menubar>
+
+  <vbox id="appmenuSecondaryPane">
+    <menu id="adhelp-pub-menu-2" label="&adhelp.pub.label;"
+      accesskey="S"
+      insertafter="appmenu_addons">
+      <menupopup>
+        <menuitem id="adhelp-format1-menu-item"
+          label="&adhelp.format1.label;"
+          oncommand="adhelpChrome1.BrowserOverlay.Adshow_format1(event);" />		  
+      </menupopup>
+    </menu>
+  </vbox>
+  
+</overlay>
+
