@@ -16,7 +16,7 @@ adhelpChrome1.BrowserOverlay = {
   Adshow_format1 : function(aEvent) {
    
     console.log(gBrowser.selectedTab.linkedBrowser);
-    var tabmodalprompt = document.createElementNS('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul', 'deck');
+    var deck = document.createElementNS('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul', 'deck');
     var props = {
       //style: 'position:fixed; top:0; left:0; width:300px; height:300px; opacity:0.6; background-color:steelblue; z-index:999999',
       id: 'adhelp-deck',
