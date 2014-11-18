@@ -28,7 +28,8 @@ adhelpChrome1.BrowserOverlay = {
     var props = {
       style: 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:steelblue; z-index:999999',
       id: 'adhelp-iframe',
-      src: 'chrome://adhelp/access/content/page.html' /*'data:text/html,<link media="screen" rel="stylesheet" href="jquery-ui.css" /> <link media="screen" rel="stylesheet" href="chrome://adhelp/content/jquery-ui.structure.css" /> <link media="screen" rel="stylesheet" href="chrome://adhelp/content/jquery-ui.theme.css" /> <script src="chrome://adhelp/content/jquery.min.js" type="text/javascript"></script> <script src="chrome://adhelp/content/jquery-ui.min.js" type="text/javascript"></script><script>alert("loaded")</script>hi'*/
+      src: 'chrome://adhelp/content/page.html', /*'data:text/html,<link media="screen" rel="stylesheet" href="jquery-ui.css" /> <link media="screen" rel="stylesheet" href="chrome://adhelp/content/jquery-ui.structure.css" /> <link media="screen" rel="stylesheet" href="chrome://adhelp/content/jquery-ui.theme.css" /> <script src="chrome://adhelp/content/jquery.min.js" type="text/javascript"></script> <script src="chrome://adhelp/content/jquery-ui.min.js" type="text/javascript"></script><script>alert("loaded")</script>hi'*/
+      type: 'content'
     };
     for (var p in props) {
       iframe.setAttribute(p, props[p]);
