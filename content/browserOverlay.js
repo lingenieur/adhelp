@@ -33,7 +33,7 @@ adhelpChrome1.BrowserOverlay = {
     iframe.addEventListener('DOMContentLoaded', function(e) {
       //var iframeContentWindow = e;
       //console.log('iframeContentWindow, e:', e);
-      iframe.contentDocument.documentElement.addEventListener('dblclick', function() {
+      iframe.contentDocument.getElementById('close_deck').addEventListener('click', function() {
         deck.parentNode.removeChild(deck);
       }, false);
     }, false);
