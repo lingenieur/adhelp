@@ -14,15 +14,15 @@ adhelpChrome1.BrowserOverlay = {
    * Show Image 300x300
    */
   Adshow_format1 : function(aEvent) {
-    var preExistingDeck = gBrowser.selectedTab.linkedBrowser.querySelector('.adhelp-deck');
+    var preExistingDeck = gBrowser.selectedTab.linkedBrowser.parentNode.querySelector('.adhelp-deck');
     if (preExistingDeck) {
       console.warn('deck already exists so dont insert another one', 'preExistingDeck:', preExistingDeck);
       return false;
-    }
+    } 
     var deck = document.createElementNS('http://www.mozilla.org/k eymaster/gatekeeper/there.is.only.xul', 'deck');
     var props = {
       class: 'adhelp-deck',
-      style: 'width:100%; height:100%; background-color:steelblue;'
+      style: 'width:100%; height:100%; background-color:steelblue; -moz-appearance:none;'
     };
     for (var p in props) {
       deck.setAttribute(p, props[p]);
