@@ -22,7 +22,7 @@ adhelpChrome1.BrowserOverlay = {
     var deck = document.createElementNS('http://www.mozilla.org/k eymaster/gatekeeper/there.is.only.xul', 'deck');
     var props = {
       class: 'adhelp-deck',
-      style: 'width:100%; height:100%; background-color:steelblue; -moz-appearance:none;'
+      style: 'background-color:steelblue;'
     };
     for (var p in props) {
       deck.setAttribute(p, props[p]);
@@ -38,7 +38,7 @@ adhelpChrome1.BrowserOverlay = {
       }, false);
     }, false);
     var props = {
-      style: 'border:0; width:100%; height:100%;',
+      style: 'border:0; width:100%; height:100%; background-color:springgreen;',
       class: 'adhelp-iframe',
       src: 'chrome://adhelp/content/page.html'
     };
