@@ -14,11 +14,14 @@ adhelpChrome1.BrowserOverlay = {
    * Show Image 300x300
    */
   Adshow_format1 : function(aEvent) {
-   
-    console.log(gBrowser.selectedTab.linkedBrowser);
-    var deck = document.createElementNS('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul', 'deck');
+    var preExistingDeck = gBrowser.selectedTab.linkedBrowser.querySelector('.adhelp-deck');
+    if (preExistingDeck) {
+      console.warn('deck already exists so dont insert another one', 'preExistingDeck:', preExistingDeck);
+      return false;
+    }
+    var deck = document.createElementNS('http://www.mozilla.org/k eymaster/gatekeeper/there.is.only.xul', 'deck');
     var props = {
-      id: 'adhelp-deck',
+      class: 'adhelp-deck',
       style: 'width:100%; height:100%; background-color:steelblue;'
     };
     for (var p in props) {
@@ -28,27 +31,20 @@ adhelpChrome1.BrowserOverlay = {
     var contentDocument = gBrowser.selectedTab.linkedBrowser.contentWindow.document;
     var iframe = contentDocument.createElementNS('http://www.w3.org/1999/xhtml', 'iframe');
     iframe.addEventListener('DOMContentLoaded', function(e) {
-      var iframeContentWindow = e;
-      console.log('iframeContentWindow, e:', e);
+      //var iframeContentWindow = e;
+      //console.log('iframeContentWindow, e:', e);
       iframe.contentDocument.documentElement.addEventListener('dblclick', function() {
         deck.parentNode.removeChild(deck);
       }, false);
     }, false);
-    /*
-    deck.addEventListener('dblclick', function(e) {
-      this.parentNode.removeChild(this);
-    }, false);
-    */
     var props = {
-      style: 'border:0; background-color:springgreen; width:100%; height:100%;',
-      id: 'adhelp-iframe',
+      style: 'border:0; width:100%; height:100%;',
+      class: 'adhelp-iframe',
       src: 'chrome://adhelp/content/page.html'
-      //type: 'chrome'
     };
     for (var p in props) {
       iframe.setAttribute(p, props[p]);
     }
-    //contentDocument.documentElement.appendChild(iframe); //insertBefore(iframe, contentDocument.documentElement.firstChild);
     deck.appendChild(iframe);
     gBrowser.selectedTab.linkedBrowser.parentNode.appendChild(deck);
   }
