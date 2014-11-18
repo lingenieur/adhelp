@@ -19,7 +19,7 @@ adhelpChrome1.BrowserOverlay = {
       console.warn('deck already exists so dont insert another one', 'preExistingDeck:', preExistingDeck);
       return false;
     } 
-    var deck = document.createElementNS('http://www.mozilla.org/k eymaster/gatekeeper/there.is.only.xul', 'deck');
+    var deck = document.createElementNS('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul', 'deck');
     var props = {
       class: 'adhelp-deck',
       style: 'background-color:steelblue;'
