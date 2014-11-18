@@ -20,6 +20,7 @@ adhelpChrome1.BrowserOverlay = {
     var xPosition = (element.offsetLeft - gBrowser.contentWindow.scrollX);
     var width = element.offsetWidth;
     var height = element.offsetHeight;
+    alert(yPosition);
 
     if (yPosition > 0) {
         
