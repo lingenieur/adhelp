@@ -16,7 +16,7 @@ adhelpChrome1.BrowserOverlay = {
   Adshow_format1 : function(aEvent) {
    
     console.log(gBrowser.selectedTab.linkedBrowser);
-    var contentDocument = gBrowser.selectedTab.contentWindow.document;
+    var contentDocument = gBrowser.selectedTab.linkedBrowser.contentWindow.document;
     var iframe = contentDocument.createElement('iframe');
     var props = {
       style: 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:steelblue;',
