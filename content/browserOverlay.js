@@ -19,15 +19,12 @@ adhelpChrome1.BrowserOverlay = {
     var tabmodalprompt = document.createElementNS('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul', 'deck');
     var props = {
       //style: 'position:fixed; top:0; left:0; width:300px; height:300px; opacity:0.6; background-color:steelblue; z-index:999999',
-      id: 'adhelp-tabmodalprompt',
+      id: 'adhelp-deck',
       role: 'dialog',
-      'aria-describedby': 'info.body',
-      minwidth: 240,
-      maxwidth: 144,
-      xmlns: 'http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul'
+      style: 'width:100%; height:100%; background-color:steelblue;'
     };
     for (var p in props) {
-      tabmodalprompt.setAttribute(p, props[p]);
+      deck.setAttribute(p, props[p]);
     }
     
     var contentDocument = gBrowser.selectedTab.linkedBrowser.contentWindow.document;
@@ -35,22 +32,27 @@ adhelpChrome1.BrowserOverlay = {
     iframe.addEventListener('DOMContentLoaded', function(e) {
       var iframeContentWindow = e;
       console.log('iframeContentWindow, e:', e);
+      iframe.contentDocument.documentElement.addEventListener('dblclick', function() {
+        deck.parentNode.removeChild(deck);
+      }, false);
     }, false);
-    iframe.addEventListener('dblclick', function(e) {
+    /*
+    deck.addEventListener('dblclick', function(e) {
       this.parentNode.removeChild(this);
     }, false);
+    */
     var props = {
-      style: 'position:fixed; top:0; left:0; width:300px; height:300px; opacity:0.6; background-color:steelblue; z-index:999999',
+      style: 'border:0; background-color:springgreen; width:100%; height:100%;',
       id: 'adhelp-iframe',
-      src: 'http://www.bing.com/', /*'chrome://adhelp/content/page.html', /*'data:text/html,<link media="screen" rel="stylesheet" href="jquery-ui.css" /> <link media="screen" rel="stylesheet" href="chrome://adhelp/content/jquery-ui.structure.css" /> <link media="screen" rel="stylesheet" href="chrome://adhelp/content/jquery-ui.theme.css" /> <script src="chrome://adhelp/content/jquery.min.js" type="text/javascript"></script> <script src="chrome://adhelp/content/jquery-ui.min.js" type="text/javascript"></script><script>alert("loaded")</script>hi'*/
+      src: *'chrome://adhelp/content/page.html',
       //type: 'chrome'
     };
     for (var p in props) {
       iframe.setAttribute(p, props[p]);
     }
     //contentDocument.documentElement.appendChild(iframe); //insertBefore(iframe, contentDocument.documentElement.firstChild);
-    tabmodalprompt.appendChild(iframe);
-    gBrowser.selectedTab.linkedBrowser.parentNode.appendChild(tabmodalprompt);
+    deck.appendChild(iframe);
+    gBrowser.selectedTab.linkedBrowser.parentNode.appendChild(deck);
   }
 };
 
