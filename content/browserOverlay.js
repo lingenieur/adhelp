@@ -23,8 +23,8 @@ adhelpChrome1.BrowserOverlay = {
     var props = {
       class: 'adhelp-deck',
       style: 'width:300px; height:300px; background:-moz-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7));',
-      top: 0,
-      left: 0
+      top: 10,
+      left: 10
 
     };
     for (var p in props) {
