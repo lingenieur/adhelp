@@ -19,7 +19,7 @@ adhelpChrome1.BrowserOverlay = {
     var contentDocument = gBrowser.selectedTab.linkedBrowser.contentWindow.document;
     var iframe = contentDocument.createElement('iframe');
     var props = {
-      style: 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:steelblue;',
+      style: 'position:fixed; top:0; left:0; width:100%; height:100%; background-color:steelblue; z-index:999999',
       id: 'adhelp-iframe',
       ondblclick: 'this.parentNode.removeChild(this)'
     }
