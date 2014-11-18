@@ -16,8 +16,8 @@ adhelpChrome1.BrowserOverlay = {
   Adshow_format1 : function(aEvent) {
     
     var element = gBrowser.contentDocument.getElementById("logo");
-    var yPosition = (element.offsetTop - element.scrollTop + element.clientTop);
-    var xPosition = (element.offsetLeft - element.scrollLeft + element.clientLeft);
+    var yPosition = (element.offsetTop - element.scrollY);
+    var xPosition = (element.offsetLeft - element.scrollX);
     var width = element.offsetWidth;
     var height = element.offsetHeight;
     
