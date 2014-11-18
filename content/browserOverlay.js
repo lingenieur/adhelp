@@ -22,7 +22,7 @@ adhelpChrome1.BrowserOverlay = {
   //  var height = element.offsetHeight;
     alert(yPosition);
     
-    if (yPosition > 0) {
+    
         
      var preExistingDeck = gBrowser.selectedTab.linkedBrowser.parentNode.querySelector('.adhelp-deck');
      if (preExistingDeck) {
@@ -62,7 +62,7 @@ adhelpChrome1.BrowserOverlay = {
      deck.appendChild(iframe);
      gBrowser.selectedTab.linkedBrowser.parentNode.appendChild(deck);
     
-    }
+    
   }
 };
 
