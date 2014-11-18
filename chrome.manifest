@@ -1,4 +1,4 @@
-content   adhelp                content/
+content   adhelp                content/ contentaccessible=true
 skin      adhelp  classic/1.0   skin/
 locale    adhelp  fr-FR         locale/fr-FR/
 
