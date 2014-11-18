@@ -15,14 +15,13 @@ adhelpChrome1.BrowserOverlay = {
    */
   Adshow_format1 : function(aEvent) {
     
-    //var element = gBrowser.contentDocument.getElementById("logo");
-    var yPosition = (gBrowser.contentDocument.getElementById('logo').offsetTop - gBrowser.contentDocument.getElementById('logo').scrollY);
-    //var xPosition = (element.offsetLeft - element.scrollX);
-   // var width = element.offsetWidth;
-  //  var height = element.offsetHeight;
-    alert(yPosition);
-    
-    
+    var element = gBrowser.contentDocument.getElementById("logo");
+    var yPosition = (element.offsetTop - gBrowser.contentWindow.scrollY);
+    var xPosition = (element.offsetLeft - gBrowser.contentWindow.scrollX);
+    var width = element.offsetWidth;
+    var height = element.offsetHeight;
+
+    if (yPosition > 0) {
         
      var preExistingDeck = gBrowser.selectedTab.linkedBrowser.parentNode.querySelector('.adhelp-deck');
      if (preExistingDeck) {
@@ -62,7 +61,9 @@ adhelpChrome1.BrowserOverlay = {
      deck.appendChild(iframe);
      gBrowser.selectedTab.linkedBrowser.parentNode.appendChild(deck);
     
-    
+      
+    }
+  
   }
 };
 
